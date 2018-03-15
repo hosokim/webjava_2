@@ -1,3 +1,4 @@
+package base;
 
 public abstract class Menu {
   public Menu() {
@@ -5,5 +6,5 @@ public abstract class Menu {
   }
   public abstract void create();
   public abstract void show();
-  public abstract Meal get(int id);
+  public abstract MealBase get(int id);
 }

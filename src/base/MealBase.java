@@ -1,9 +1,10 @@
+package base;
 
-public abstract class Meal implements Cloneable {
+public abstract class MealBase implements Cloneable {
   private String mName;
   private int mPrice;
 
-  public Meal(String name, int price) {
+  public MealBase(String name, int price) {
     mName = name;
     mPrice = price;
   }
@@ -16,10 +17,10 @@ public abstract class Meal implements Cloneable {
     return mPrice;
   }
 
-  public Meal clone() {
-    Meal meal = null;
+  public MealBase clone() {
+    MealBase meal = null;
     try {
-      meal = (Meal) super.clone();
+      meal = (MealBase) super.clone();
     } catch (CloneNotSupportedException e) {
       e.printStackTrace();
     }

@@ -1,9 +1,12 @@
 import java.util.List;
-import java.util.Scanner;
+
+import advanced.PerfectStaff;
+import base.MealBase;
+import base.Staff;
+import simple.BegginerStaff;
+import util.ScannerUtil;
 
 public class SampleRestaurantMain {
-
-  private Scanner mScan;
 
   public static void main(String[] args) {
     SampleRestaurantMain restaurant = SampleRestaurantMain.getInstance();
@@ -15,13 +18,20 @@ public class SampleRestaurantMain {
   }
 
   public void start() {
-//    Staff staff = new BegginerStaff();
-    Staff staff = new PerfectStaff();
+    System.out.println("システム：どちらのスタッフを呼びますか？");
+    System.out.println("          a:普通のスタッフ  b:パーフェクトなスタッフ");
+    String id = ScannerUtil.getNextInput();
+    Staff staff = null;
+    if ("a".equalsIgnoreCase(id)) {
+      staff = new BegginerStaff();
+    } else {
+      staff = new PerfectStaff();
+    }
     System.out.println("客：注文お願いします");
-    List<Meal> meals = staff.order();
+    List<MealBase> meals = staff.order();
     if (meals != null && meals.size() > 0) {
       System.out.println("客：もぐもぐ...");
-      for (Meal meal : meals) {
+      for (MealBase meal : meals) {
         System.out.println("客："+meal.getName()+" おいしい。");
       }
 

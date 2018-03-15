@@ -1,5 +1,7 @@
+package advanced;
+import base.MealBase;
 
-public class CanBigSizeMeal extends Meal {
+public class CanBigSizeMeal extends MealBase {
   private boolean mIsBig = false;
 
   public CanBigSizeMeal(String name, int price) {

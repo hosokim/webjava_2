@@ -1,3 +1,5 @@
+package advanced;
+import base.Cashier;
 
 public class DiscountCashier extends Cashier {
   private boolean mUseCoupon = false;
